@@ -1,0 +1,44 @@
+{
+    "kind": "ImageStream",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "httpd",
+        "creationTimestamp": null
+    },
+    "spec": {
+        "dockerImageRepository": "niconosenzo/httpd-s2i",
+        "tags": [
+            {
+                "name": "2.4",
+                "annotations": {
+                    "description": "Build and run static web apps served by httpd 2.4",
+                    "supports": "httpd,httpd:2.4",
+                    "tags": "builder,httpd",
+                    "version": "2.4"
+
+                },
+                "from": {
+                    "kind": "ImageStreamTag",
+                    "name": "latest"
+                }
+            },
+            {
+                "name": "latest"
+            }
+        ]
+    },
+    "status": {
+        "dockerImageRepository": "niconosenzo/httpd-s2i",
+        "tags": [
+            {
+                "tag": "2.4",
+                "items": [
+                    {
+                        "dockerImageReference": "niconosenzo/httpd-s2i:latest"
+                    }
+                ]
+            }
+        ]
+    }
+}
+
